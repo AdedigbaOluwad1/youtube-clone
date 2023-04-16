@@ -2,12 +2,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
 
 :root{
-    --primary-color: ;
+    --primary-color: #cc0000;
     --secondary-color: ;
     --hover-color: #e5e5e5;
     --border-color: #cccccc;
     --grey-text: #959595;
     --light-bg: #f8f8f8;
+    --dark: #0f0f0f;
+    --light: #fff;
+    --active-nav-link: #f2f2f2;
 }
 
 *{
@@ -21,15 +24,17 @@ body{
     font-size: 16px;
 }
 
-header{
+nav{
     height: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
+    position: sticky;
+    width: 100%;
 }
 
-header > div{
+nav > div{
     display: flex;
     align-items: center;
 }
@@ -53,13 +58,13 @@ button:focus-visible{
     background-color: var(--hover-color);
 }
 
-.nav-btn > i{
+.logo-parent-container > button > i{
     font-size: 24px;
 }
 
 .logo{
     width: 90px;
-    margin-left: 12px;
+    margin-left: 14px;
     margin-top: 4px;
 }
 
@@ -98,4 +103,101 @@ button:focus-visible{
     border-radius: 0 40px 40px 0;
     border: 1px solid var(--border-color);
     font-size: 18px;
+    margin: 0 !important;
+}
+.search-container > .btn{
+    font-size: 18px;
+    color: var(--dark);
+    margin-left: 10px;
+}
+.user-icon{
+    width: 32px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.menu-icons{
+    display: flex;
+    gap: 6px;
+}
+
+.menu-icons > button > i{
+    font-size: 18px;
+    margin: 0;
+}
+
+.user-icon{
+    margin-left: 10px;
+}
+
+.notification::after{
+    content: '9+';
+    color: var(--light);
+    background-color: var(--primary-color);
+    position: absolute;
+    width: 23px;
+    height: 16px;
+    border-radius: 22px;
+    border: 2px solid #fff;
+    font-style: normal;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3px;
+    right: -5px;
+}
+
+main{
+    display: flex;
+    width: 100vw;
+    position: fixed;
+}
+.sidebar{
+    width: 17%;
+    overflow-y: auto;
+    padding: 0 12px;
+}
+.sidebar-links-container{
+    padding: 12px 0;
+    border-bottom: 1px solid var(--hover-color);
+}
+
+.sidebar-links-container > h5{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px 12px;
+}
+
+.sidebar-links-container > ul{
+    list-style: none;
+}
+
+.sidebar-links-container > ul > li{
+    display: flex;
+    gap: 24px;
+    border-radius: 14px;
+    height: 40px;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 15px;
+}
+
+.sidebar-links-container > ul > li:hover{
+    background-color: var(--active-nav-link);
+}
+
+.active{
+    background-color: var(--active-nav-link);
+    font-weight: 500;
+}
+
+.sidebar-links-container > ul > li > i{
+    font-size: 20px;
+}
+
+.sidebar-links-container > ul > li > img{
+    width: 24px;
+    aspect-ratio: 1;
+    border-radius: 50%;
 }
