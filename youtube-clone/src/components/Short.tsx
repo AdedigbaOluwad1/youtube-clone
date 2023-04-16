@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Shorts() {
+function Short() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Shorts() {
   )
 }
 
-export default Shorts;
+export default Short
