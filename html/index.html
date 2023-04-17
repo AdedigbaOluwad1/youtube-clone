@@ -11,7 +11,7 @@
 <body>
     <nav>
         <div class="logo-parent-container" style="flex: 1">
-          <button class="btn nav-btn"><i class="bi bi-list"></i></button> 
+          <button class="btn nav-btn" id="nav-btn"><i class="bi bi-list"></i></button> 
           <div class="logo-container">
             <img src="./logo.png" class="logo" alt=""> 
           </div>
@@ -338,6 +338,12 @@
             </div>
         </section>
     </main>
-    
+    <script>
+        const sidebar = document.getElementsByClassName('sidebar-lg')
+        const toggler = document.getElementById('nav-btn')
+
+        toggler.onclick(console.log('I was clicked'))
+            
+    </script>
 </body>
 </html>
