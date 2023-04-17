@@ -3,7 +3,7 @@
 
 :root{
     --primary-color: #cc0000;
-    --secondary-color: ;
+    --secondary-color: #606060;
     --hover-color: #e5e5e5;
     --border-color: #cccccc;
     --grey-text: #959595;
@@ -150,17 +150,29 @@ button:focus-visible{
 
 main{
     display: flex;
-    width: 100vw;
-    position: fixed;
+    width: 100%;
+    height: calc(100vh - 56px);
 }
 .sidebar{
     width: 17%;
-    overflow-y: auto;
+    overflow-y: hidden;
     padding: 0 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #606060;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 10px;
+  }
+
+.sidebar:hover{
+    overflow: auto;
 }
 .sidebar-links-container{
     padding: 12px 0;
     border-bottom: 1px solid var(--hover-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-links-container > h5{
@@ -200,4 +212,25 @@ main{
     width: 24px;
     aspect-ratio: 1;
     border-radius: 50%;
+}
+
+.footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 4px;
+    font-size: 12px;
+    padding: 0 0 0 12px;
+}
+
+.footer-links > a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+.copyright{
+    padding: 12px;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--grey-text);
 }
