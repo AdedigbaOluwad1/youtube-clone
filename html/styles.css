@@ -519,6 +519,8 @@ main{
         width: 40px;
         aspect-ratio: 1;
         border: unset;
+        background-color: var(--hover-color);
+        border-radius: 50%;
     }
     .search-container{
         width: fit-content;
@@ -527,6 +529,18 @@ main{
     }
     .search-container > .btn{
         margin-left: 2px;
+    }
+    .menu-icons{
+        gap: 0;
+    }
+}
+
+@media(max-width: 430px){
+    .menu-icons > :nth-child(2){
+        display: none !important;
+    }
+    .search-bt2{
+        display: none;
     }
 }
 
