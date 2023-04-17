@@ -86,13 +86,15 @@ button:focus-visible{
 
 .search-container{
     display: flex;
+    flex: 0 1 720px;
+    margin-left: 40px;
 }
 .search{
     border: 1px solid var(--border-color);
     color: var(--grey-text);
     font-size: 16px !important;
     height: 40px;
-    width: 540px;
+    width: 100%;
     padding-left: 20px;
     border-bottom-left-radius: 40px;
     border-top-left-radius: 40px;
@@ -106,6 +108,13 @@ button:focus-visible{
     border: 1px solid var(--border-color);
     font-size: 18px;
     margin: 0 !important;
+}
+
+.search-bt2{
+    width: 40px;
+    aspect-ratio: 1;
+    font-size: 18px;
+    margin: 0 0 0 10 !important;
 }
 .search-container > .btn{
     font-size: 18px;
@@ -121,6 +130,7 @@ button:focus-visible{
 .menu-icons{
     display: flex;
     gap: 6px;
+    justify-content: end;
 }
 
 .menu-icons > button > i{
@@ -429,6 +439,10 @@ main{
     border-bottom: 4px solid var(--border-color);
 }
 
+.sidebar-md{
+    display: none;
+}
+
 @media(max-width: 1200px){
     .sidebar-lg{
         display: none;
@@ -439,6 +453,10 @@ main{
     }
     .main{
         width: calc(100vw - 75px);
+    }
+
+    .sidebar-md{
+        display: block;
     }
 
     .sidebar-links-container{
@@ -462,10 +480,53 @@ main{
 
 @media(max-width: 1110px){
     .main-video-container{
-        width: 78%;
+        max-width: 752px;
         margin: 0 auto;
     }
     .video{
         width: 48.8%;
     }
 }
+
+@media(max-width: 768px){
+    .sidebar-md{
+        display: none;
+    }
+    .sidebar{
+        display: none;
+    }
+    .main-video-container{
+        width: 100%;
+    }
+    .main{
+        width: 100%;
+    }
+}
+
+@media(max-width: 700px){
+    .main-video-container{
+        max-width: 376px;
+        margin: 0 auto;
+    }
+    .video{
+        width: 100%;
+    }
+
+    .search {
+        display: none;
+    }
+    .search-btn{
+        width: 40px;
+        aspect-ratio: 1;
+        border: unset;
+    }
+    .search-container{
+        width: fit-content;
+        margin-left: auto;
+        justify-content: end;
+    }
+    .search-container > .btn{
+        margin-left: 2px;
+    }
+}
+
