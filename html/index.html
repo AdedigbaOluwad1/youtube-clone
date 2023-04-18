@@ -11,7 +11,7 @@
 <body>
     <nav>
         <div class="logo-parent-container" style="flex: 1">
-          <button class="btn nav-btn" id="nav-btn"><i class="bi bi-list"></i></button> 
+          <button class="btn nav-btn" id="nav-btn" onclick="toggle()"><i class="bi bi-list"></i></button> 
           <div class="logo-container">
             <img src="./logo.png" class="logo" alt=""> 
           </div>
@@ -98,13 +98,13 @@
                 <p class="copyright">&copy; 2023 Google LLC</p>
             </div>
             </div>
-            <div class="sidebar-md">
+            <div class="sidebar-md hidden">
                 <div class="sidebar-links-container">
                     <ul>
-                        <li class="sidebar-links active"><i class="bi bi-house-door-fill"></i>Home</li>
-                        <li class="sidebar-links"><i class="bi bi-camera-video"></i>Shorts</li>
-                        <li class="sidebar-links"><i class="bi bi-cloud-check"></i>Subscript..</li>
-                        <li class="sidebar-links"><i class="bi bi-cloud-check"></i>Library</li>
+                        <li class="sidebar-links sm-links active"><i class="bi bi-house-door-fill"></i>Home</li>
+                        <li class="sidebar-links sm-links"><i class="bi bi-camera-video"></i>Shorts</li>
+                        <li class="sidebar-links sm-links"><i class="bi bi-cloud-check"></i>Subscript..</li>
+                        <li class="sidebar-links sm-links"><i class="bi bi-cloud-check"></i>Library</li>
                     </ul>
                     </div>
             </div>
@@ -114,9 +114,9 @@
         <section class="main">
             <div class="category-container">
                 <div class="scroll-btn">
-                    <button class="btn nav-btn"><i class="bi bi-chevron-left"></i></button> 
+                    <button class="btn nav-btn" id="scroll-left" onclick="scrolleft()"><i class="bi bi-chevron-left"></i></button> 
                 </div>
-                <div class="categories">
+                <div class="categories" id="categories">
                     <button class="btn btn-active">All</button>
                     <button class="btn btn-active">React routers</button>
                     <button class="btn btn-active">HTML 5</button>
@@ -136,7 +136,7 @@
                     <button>News</button> 
                 </div>
                 <div class="scroll-btn">
-                    <button class="btn nav-btn"><i class="bi bi-chevron-right"></i></button> 
+                    <button class="btn nav-btn" id="scroll-right" onclick="scrollright()"><i class="bi bi-chevron-right"></i></button> 
                 </div>
             </div>
             <div class="main-video-container">
@@ -339,10 +339,34 @@
         </section>
     </main>
     <script>
-        const sidebar = document.getElementsByClassName('sidebar-lg')
-        const toggler = document.getElementById('nav-btn')
+        
+        function toggle(){
+            const sidebar = document.getElementsByClassName('sidebar-lg')[0];
+            const sidebarMd = document.getElementsByClassName('sidebar-md')[0];
+            const MainSm = document.getElementsByClassName('main')[0];
+            const Sidebarsm = document.getElementsByClassName('sidebar')[0];
 
-        toggler.onclick(console.log('I was clicked'))
+            sidebarMd.classList.toggle('hidden')
+            sidebar.classList.toggle('hidden')
+            Sidebarsm.classList.toggle('sidebar-sm')
+            MainSm.classList.toggle('main-sm')
+        };
+
+        function scrolleft(){
+            const scrollContainer = document.getElementById('categories');
+            scrollContainer.scrollBy({
+                left: -100,
+                behavior: 'smooth'
+            });
+
+        };
+        function scrollright(){
+            const scrollContainer = document.getElementById('categories');
+            scrollContainer.scrollBy({
+                right: 100,
+                behavior: 'smooth'
+            });
+        }
             
     </script>
 </body>
